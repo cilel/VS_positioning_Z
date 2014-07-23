@@ -67,6 +67,53 @@ int counter =0,gCount=0;
 void onMouse( int event, int x, int y, int, void* );
 vpColVector vel;
 
+
+/** -------Global variables for controlling ------**/
+
+    // 2. define variables - use the global variable vpColvector vel
+    //vpHomogeneousMatrix cMo,cMod,wMe,eMo,cMw,wMcR,wMc,wMo,Tr,cMe; //Robot-camera reference
+    //vpCameraParameters cam; // camera parameters
+
+    double Zz ;  // Z position
+    Zz= 0.007; // !!!! This should be the (inital) distance between sensor and object, in meter !!!!
+    double sigma=5; // sigma in Gauss PDF, not used in X-Y control
+
+    npFeatureLuminance sI; // current feature
+    npFeatureLuminance sId; // desired feature
+
+    vpMatrix Lsd;   // matrice d'interaction a la position desiree
+    vpMatrix Hsd;  // hessien a la position desiree
+    vpMatrix H ; // Hessien utilise pour le levenberg-Marquartd
+    vpColVector error ; // Erreur I-I*, photometric information
+
+    vpMatrix Lgsd; // interaction matrix (using image gradient) of the desired position
+    vpMatrix Hgsd; // hessien of the desired position (using image gradient)
+    vpMatrix Hg;  // Hessien for  levenberg-Marquartd (using image gradient)
+    vpColVector sg_error; // error sg-sg*, image gradient
+
+    vpColVector e ;// velocity to be multiply by lamda
+    vpColVector v ; // camera velocity send to the robot
+    vpColVector eg; // velocity of z axis
+    vpColVector vg ; // camera velocity of z axis
+    double vgd;// camera velocity of z axis, double
+
+    vpVelocityTwistMatrix cVw; //spatial velocity transform matrix
+
+    vpMatrix Js;// visual feature Jacobian
+    vpMatrix Jn;// robot Jacobian
+    vpMatrix diagHsd;// diag(Hsd)
+
+    //For parallelZ, image gradient
+    vpMatrix Jgs;// visual feature Jacobian
+    vpMatrix Jgn;// robot Jacobian
+    vpMatrix diagHgsd;// diag(Hsd)
+
+    double lambda=100;
+    double mu;
+
+
+
+
 Client::Client()
 {
     //Optional constructor - not used
@@ -431,47 +478,6 @@ vpColVector Client::semPosCont(Mat curImage, Mat desImage, bool init)
 
     pjModel = parallel;
 
-    // 2. define variables - use the global variable vpColvector vel
-    //vpHomogeneousMatrix cMo,cMod,wMe,eMo,cMw,wMcR,wMc,wMo,Tr,cMe; //Robot-camera reference
-    //vpCameraParameters cam; // camera parameters
-
-    double Zz ;  // Z position
-    Zz= 0.2;
-    double sigma; // sigma in Gauss PDF
-
-    npFeatureLuminance sI; // current feature
-    npFeatureLuminance sId; // desired feature
-
-    vpMatrix Lsd;   // matrice d'interaction a la position desiree
-    vpMatrix Hsd;  // hessien a la position desiree
-    vpMatrix H ; // Hessien utilise pour le levenberg-Marquartd
-    vpColVector error ; // Erreur I-I*, photometric information
-
-    vpMatrix Lgsd; // interaction matrix (using image gradient) of the desired position
-    vpMatrix Hgsd; // hessien of the desired position (using image gradient)
-    vpMatrix Hg;  // Hessien for  levenberg-Marquartd (using image gradient)
-    vpColVector sg_error; // error sg-sg*, image gradient
-
-    vpColVector e ;// velocity to be multiply by lamda
-    vpColVector v ; // camera velocity send to the robot
-    vpColVector eg; // velocity of z axis
-    vpColVector vg ; // camera velocity of z axis
-    double vgd;// camera velocity of z axis, double
-
-    vpVelocityTwistMatrix cVw; //spatial velocity transform matrix
-
-    vpMatrix Js;// visual feature Jacobian
-    vpMatrix Jn;// robot Jacobian
-    vpMatrix diagHsd;// diag(Hsd)
-
-    //For parallelZ, image gradient
-    vpMatrix Jgs;// visual feature Jacobian
-    vpMatrix Jgn;// robot Jacobian
-    vpMatrix diagHgsd;// diag(Hsd)
-
-    double lambda=100;
-    double mu;
-
     if(init)
     {
 
@@ -498,7 +504,7 @@ vpColVector Client::semPosCont(Mat curImage, Mat desImage, bool init)
 
         sId.interaction(Lsd) ;
         // For Z
-        Lgsd = sId.get_Lg();
+       // Lgsd = sId.get_Lg();
 
         if(pjModel==parallel )
         {
@@ -513,7 +519,7 @@ vpColVector Client::semPosCont(Mat curImage, Mat desImage, bool init)
             diagHsd.eye(n);
             for(unsigned int i = 0 ; i < n ; i++) diagHsd[i][i] = Hsd[i][i];
         }
-        else if (pjModel==parallelZ)
+ /*       else if (pjModel==parallelZ)
         {
 
             sI.interaction(Lsd) ; // here use Ls instead of Lsd to compute Js
@@ -548,10 +554,11 @@ vpColVector Client::semPosCont(Mat curImage, Mat desImage, bool init)
             for(unsigned int i = 0 ; i < n ; i++) diagHsd[i][i] = Hsd[i][i];
         }
 
-
+*/
 
     }
-    else // iteration
+     /*---------------------- iteration ------------------------*/
+    else
     {
         // 3. Compute the control law and save velocities
 
@@ -562,7 +569,7 @@ vpColVector Client::semPosCont(Mat curImage, Mat desImage, bool init)
         sI.error(sId,error);
         int S_g=0; // image laplacian
 
-        if (pjModel==parallelZ)
+ /*       if (pjModel==parallelZ)
         {
             vpColVector sg = sI.get_sg();
             int nbr_sg = sg.size();
@@ -571,7 +578,7 @@ vpColVector Client::semPosCont(Mat curImage, Mat desImage, bool init)
                 S_g+= sg[m];
 
             sI.sg_error(sId.get_sg(),sg_error) ;
-        }
+        }*/
 
         // Compute the levenberg Marquartd term
         H = ((mu * diagHsd) + Hsd).inverseByLU();
@@ -579,10 +586,10 @@ vpColVector Client::semPosCont(Mat curImage, Mat desImage, bool init)
         e = H * Lsd.t() *error ;
         // velocity
         v =  -lambda*e;
-
+/*
         if(pjModel==parallelZ)
         {
-            /*
+
                       Jn.resize(6,5);
                       Jn[0][0]=1;
                       Jn[1][1]=1;
@@ -621,8 +628,11 @@ vpColVector Client::semPosCont(Mat curImage, Mat desImage, bool init)
                       if (iter> 100 && (cMod[2][3]-cMo[2][3] < 1e-6))
               vgd = -sign*lambda*0.5e-1/Jdg[0]*Jg[0];
                       else
-              vgd = -sign*lambda*1e10/Jg[0];*/
+              vgd = -sign*lambda*1e10/Jg[0];
         }
+*/
+        // 4. return velocities
+
         if(pjModel==parallel)
         {
             vpColVector vc=v;
@@ -630,7 +640,7 @@ vpColVector Client::semPosCont(Mat curImage, Mat desImage, bool init)
             v[1]=vc[1];
             v[0]=vc[0];
         }
-        else if (pjModel==parallelZ)
+/*        else if (pjModel==parallelZ)
         {
             vpColVector vc=v;
             v.resize(3);
@@ -638,12 +648,9 @@ vpColVector Client::semPosCont(Mat curImage, Mat desImage, bool init)
             v[1]=vc[1];
             v[0]=vc[0];
         }
-
+*/
         new_v = v;
 
-
-
-        // 4. return velocities
     }
 
 }
