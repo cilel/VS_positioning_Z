@@ -39,8 +39,8 @@
  *
  *****************************************************************************/
 
-#ifndef npFeatureLuminance_h
-#define npFeatureLuminance_h
+#ifndef vpFeatureLuminance_h
+#define vpFeatureLuminance_h
 
 #include <visp/vpMatrix.h>
 #include <visp/vpBasicFeature.h>

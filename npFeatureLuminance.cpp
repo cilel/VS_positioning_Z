@@ -574,8 +574,8 @@ npFeatureLuminance::interaction(vpMatrix &L)
 
           double A = ( Ixx*Ix_g+Iyx*Iy_g );
           double B = ( Ixy*Ix_g+Iyy*Iy_g );
-          double D = (Ix*Ixs +Iy*Iys); // maximize image gradient as cost function
-          double E = (Ixs*Ixs+Ix*Ixss +Iys*Iys+Iy*Iyss); // gradient of D;
+          double D = (Ix*Ixs +Iy*Iys); // maximize image gradient as cost function => mimimize derivative of image gradient
+          double E = (Ixs*Ixs+Ix*Ixss +Iys*Iys+Iy*Iyss); // derivative of D;
 
 /*
           if(m%20000==0)
