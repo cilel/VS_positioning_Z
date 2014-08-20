@@ -1,4 +1,5 @@
 #include "configinfo.h"
+#include "myLog.h"
 
 configinfo::configinfo()
 {
@@ -27,6 +28,7 @@ void configinfo::readServerConfig()
     indata >> serverIPAddress;
 
     cout<<"Successfully retrieved the server information.."<<serverIPAddress<<endl;
+    winLog<<"Successfully retrieved the server information.."<<serverIPAddress<<endl;
     indata.close();
 }
 

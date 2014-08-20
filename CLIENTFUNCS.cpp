@@ -35,6 +35,7 @@ CLIENTFUNCS::CLIENTFUNCS()
 CLIENTFUNCS::~CLIENTFUNCS()
 {
     WSACleanup();
+    winLog<<"DisConnected to server..."<<endl;
 }
 
 void CLIENTFUNCS::connectServer(char *ip,int port)

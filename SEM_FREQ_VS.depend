@@ -3,7 +3,7 @@
 	"CLIENTFUNCS.h"
 	<fstream>
 
-1386320402 
+1405088004 
 
 1324821356 c:\documents and settings\naresh.marturi\bureau\sem_freq_vs\clientfuncs.h
 	"winsock2.h"
@@ -50,8 +50,6 @@
 1366115096 source:c:\documents and settings\naresh.marturi\bureau\sem_freq_vs\controlserver.cpp
 	"controlserver.h"
 	<iostream>
-
-1405088004 
 
 1366115684 c:\documents and settings\naresh.marturi\bureau\sem_freq_vs\controlserver.h
 	<iostream>
@@ -505,5 +503,426 @@
 	"fcntl.h"
 
 1366362312 source:/local/lcui/soft/nanorobust/Nanopositioning_Simulator_Z/VS LE_CUI/tritor.cpp
+	"tritor.h"
+
+1406255482 source:c:\documents and settings\naresh.marturi\bureau\vs_positioning_z-master\clientfuncs.cpp
+	"CLIENTFUNCS.h"
+	<fstream>
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs_positioning_z-master\clientfuncs.h
+	"winsock2.h"
+	<stdio.h>
+	<conio.h>
+	<iostream>
+	<fstream>
+	"myLog.h"
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs_positioning_z-master\mylog.h
+	<fstream>
+	<iostream>
+	<string>
+	<time.h>
+
+1406255482 source:c:\documents and settings\naresh.marturi\bureau\vs_positioning_z-master\syncserialcomm.cpp
+	<string.h>
+	<assert.h>
+	<sstream>
+	<iostream>
+	"SyncSerialComm.h"
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs_positioning_z-master\syncserialcomm.h
+	"windows.h"
+
+1406255482 source:c:\documents and settings\naresh.marturi\bureau\vs_positioning_z-master\configinfo.cpp
+	"configinfo.h"
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs_positioning_z-master\configinfo.h
+	"string.h"
+	"stdlib.h"
+	<iostream>
+	<fstream>
+	<winsock2.h>
+
+1406255482 source:c:\documents and settings\naresh.marturi\bureau\vs_positioning_z-master\controlserver.cpp
+	"controlserver.h"
+	<iostream>
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs_positioning_z-master\controlserver.h
+	<iostream>
+	<fstream>
+	<time.h>
+	<visp/vpImage.h>
+	<visp/vpImageIo.h>
+	<visp/vpDisplayOpenCV.h>
+	<visp/vpImageConvert.h>
+	<visp/vpFeatureLuminance.h>
+	<opencv/cv.h>
+	<opencv/highgui.h>
+	"tritor.h"
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs_positioning_z-master\tritor.h
+	<math.h>
+
+1406255482 source:c:\documents and settings\naresh.marturi\bureau\vs_positioning_z-master\functions.cpp
+	"functions.h"
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs_positioning_z-master\functions.h
+	<opencv/cv.h>
+	<opencv/highgui.h>
+	<time.h>
+
+1406255482 source:c:\documents and settings\naresh.marturi\bureau\vs_positioning_z-master\main.cpp
+	<iostream>
+	<math.h>
+	"fftw3.h"
+	<opencv/cv.h>
+	<opencv/highgui.h>
+	"Client.h"
+	"myLog.h"
+	"configinfo.h"
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs_positioning_z-master\fftw3.h
+	<stdio.h>
+	<stddef.h>
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs_positioning_z-master\client.h
+	"CLIENTFUNCS.h"
+	<visp/vpConfig.h>
+	<visp/vpPlot.h>
+	"SyncSerialComm.h"
+	"myLog.h"
+	"functions.h"
+	"controlserver.h"
+	<time.h>
+	<fstream>
+	<iomanip>
+	"opencv/cv.h"
+	"opencv/highgui.h"
+	<opencv2/core/core.hpp>
+	<opencv2/highgui/highgui.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<visp/vpImage.h>
+	<visp/vpImageIo.h>
+	<visp/vpDisplayOpenCV.h>
+	<visp/vpImageConvert.h>
+	"tritor.h"
+
+1406255482 source:c:\documents and settings\naresh.marturi\bureau\vs_positioning_z-master\mylog.cpp
+	"myLog.h"
+	"unistd.h"
+	"fcntl.h"
+
+1406255482 source:c:\documents and settings\naresh.marturi\bureau\vs_positioning_z-master\npfeatureluminance.cpp
+	<visp/vpMatrix.h>
+	<visp/vpHomogeneousMatrix.h>
+	<visp/vpDisplay.h>
+	<visp/vpPixelMeterConversion.h>
+	<visp/vpImageConvert.h>
+	<visp/vpImageFilter.h>
+	<visp/vpException.h>
+	<visp/vpDisplayGTK.h>
+	<visp/vpDisplayGDI.h>
+	<visp/vpDisplayOpenCV.h>
+	<visp/vpDisplayD3D.h>
+	<visp/vpDisplayX.h>
+	"npFeatureLuminance.h"
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs_positioning_z-master\npfeatureluminance.h
+	<visp/vpMatrix.h>
+	<visp/vpBasicFeature.h>
+	<visp/vpImage.h>
+
+1406255482 source:c:\documents and settings\naresh.marturi\bureau\vs_positioning_z-master\tritor.cpp
+	"tritor.h"
+
+1406255482 source:c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\clientfuncs.cpp
+	"CLIENTFUNCS.h"
+	<fstream>
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\clientfuncs.h
+	"winsock2.h"
+	<stdio.h>
+	<conio.h>
+	<iostream>
+	<fstream>
+	"myLog.h"
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\mylog.h
+	<fstream>
+	<iostream>
+	<string>
+	<time.h>
+
+1408465878 source:c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\client.cpp
+	"Client.h"
+	<time.h>
+	<visp/vpMatrix.h>
+	<visp/vpDisplay.h>
+	<visp/vpImageConvert.h>
+	<visp/vpFeatureTranslation.h>
+	<visp/vpHomogeneousMatrix.h>
+	<math.h>
+	"fftw3.h"
+	<opencv/cv.h>
+	<opencv/highgui.h>
+	<stdlib.h>
+	<visp/vpDebug.h>
+	<visp/vpImage.h>
+	<visp/vpImageIo.h>
+	<visp/vpImageTools.h>
+	<visp/vpCameraParameters.h>
+	<visp/vpTime.h>
+	<visp/vpVelocityTwistMatrix.h>
+	<visp/vpMath.h>
+	<visp/vpHomogeneousMatrix.h>
+	<visp/vpDisplayGTK.h>
+	<visp/vpDisplayGDI.h>
+	<visp/vpDisplayOpenCV.h>
+	<visp/vpDisplayD3D.h>
+	<visp/vpDisplayX.h>
+	"npFeatureLuminance.h"
+	<visp/vpParseArgv.h>
+	<visp/vpIoTools.h>
+	<visp/vpPlot.h>
+	<visp/vpNoise.h>
+	<visp/vpImageConvert.h>
+	<visp/vpExponentialMap.h>
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\client.h
+	"CLIENTFUNCS.h"
+	<visp/vpConfig.h>
+	<visp/vpPlot.h>
+	"SyncSerialComm.h"
+	"myLog.h"
+	"functions.h"
+	"controlserver.h"
+	<time.h>
+	<fstream>
+	<iomanip>
+	"opencv/cv.h"
+	"opencv/highgui.h"
+	<opencv2/core/core.hpp>
+	<opencv2/highgui/highgui.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<visp/vpImage.h>
+	<visp/vpImageIo.h>
+	<visp/vpDisplayOpenCV.h>
+	<visp/vpImageConvert.h>
+	"tritor.h"
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\syncserialcomm.h
+	"windows.h"
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\functions.h
+	<opencv/cv.h>
+	<opencv/highgui.h>
+	<time.h>
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\controlserver.h
+	<iostream>
+	<fstream>
+	<time.h>
+	<visp/vpImage.h>
+	<visp/vpImageIo.h>
+	<visp/vpDisplayOpenCV.h>
+	<visp/vpImageConvert.h>
+	<visp/vpFeatureLuminance.h>
+	<opencv/cv.h>
+	<opencv/highgui.h>
+	"tritor.h"
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\tritor.h
+	<math.h>
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\fftw3.h
+	<stdio.h>
+	<stddef.h>
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\npfeatureluminance.h
+	<visp/vpMatrix.h>
+	<visp/vpBasicFeature.h>
+	<visp/vpImage.h>
+
+1406255482 source:c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\syncserialcomm.cpp
+	<string.h>
+	<assert.h>
+	<sstream>
+	<iostream>
+	"SyncSerialComm.h"
+
+1406255482 source:c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\configinfo.cpp
+	"configinfo.h"
+
+1406255482 c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\configinfo.h
+	"string.h"
+	"stdlib.h"
+	<iostream>
+	<fstream>
+	<winsock2.h>
+
+1406255482 source:c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\controlserver.cpp
+	"controlserver.h"
+	<iostream>
+
+1406255482 source:c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\functions.cpp
+	"functions.h"
+
+1406255482 source:c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\main.cpp
+	<iostream>
+	<math.h>
+	"fftw3.h"
+	<opencv/cv.h>
+	<opencv/highgui.h>
+	"Client.h"
+	"myLog.h"
+	"configinfo.h"
+
+1406255482 source:c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\mylog.cpp
+	"myLog.h"
+	"unistd.h"
+	"fcntl.h"
+
+1406255482 source:c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\npfeatureluminance.cpp
+	<visp/vpMatrix.h>
+	<visp/vpHomogeneousMatrix.h>
+	<visp/vpDisplay.h>
+	<visp/vpPixelMeterConversion.h>
+	<visp/vpImageConvert.h>
+	<visp/vpImageFilter.h>
+	<visp/vpException.h>
+	<visp/vpDisplayGTK.h>
+	<visp/vpDisplayGDI.h>
+	<visp/vpDisplayOpenCV.h>
+	<visp/vpDisplayD3D.h>
+	<visp/vpDisplayX.h>
+	"npFeatureLuminance.h"
+
+1406255482 source:c:\documents and settings\naresh.marturi\bureau\vs le_cui\vs_positioning_z-master\tritor.cpp
+	"tritor.h"
+
+1408495664 source:h:\vs le_cui\vs_positioning_z-master\clientfuncs.cpp
+	"CLIENTFUNCS.h"
+	<fstream>
+
+1406259082 h:\vs le_cui\vs_positioning_z-master\clientfuncs.h
+	"winsock2.h"
+	<stdio.h>
+	<conio.h>
+	<iostream>
+	<fstream>
+	"myLog.h"
+
+1406259082 h:\vs le_cui\vs_positioning_z-master\mylog.h
+	<fstream>
+	<iostream>
+	<string>
+	<time.h>
+
+1408495934 source:h:\vs le_cui\vs_positioning_z-master\syncserialcomm.cpp
+	<string.h>
+	<assert.h>
+	<sstream>
+	<iostream>
+	"SyncSerialComm.h"
+
+1408495832 h:\vs le_cui\vs_positioning_z-master\syncserialcomm.h
+	"windows.h"
+	"myLog.h"
+
+1408495810 source:h:\vs le_cui\vs_positioning_z-master\configinfo.cpp
+	"configinfo.h"
+	"myLog.h"
+
+1406259082 h:\vs le_cui\vs_positioning_z-master\configinfo.h
+	"string.h"
+	"stdlib.h"
+	<iostream>
+	<fstream>
+	<winsock2.h>
+
+1406259082 source:h:\vs le_cui\vs_positioning_z-master\main.cpp
+	<iostream>
+	<math.h>
+	"fftw3.h"
+	<opencv/cv.h>
+	<opencv/highgui.h>
+	"Client.h"
+	"myLog.h"
+	"configinfo.h"
+
+1406259082 h:\vs le_cui\vs_positioning_z-master\fftw3.h
+	<stdio.h>
+	<stddef.h>
+
+1408496908 h:\vs le_cui\vs_positioning_z-master\client.h
+	"CLIENTFUNCS.h"
+	"SyncSerialComm.h"
+	"myLog.h"
+	<time.h>
+	<math.h>
+	<stdlib.h>
+	<fstream>
+	<iomanip>
+	<opencv/cv.h>
+	<opencv/highgui.h>
+	<opencv2/core/core.hpp>
+	<opencv2/highgui/highgui.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<visp/vpConfig.h>
+	<visp/vpDebug.h>
+	<visp/vpImage.h>
+	<visp/vpImageIo.h>
+	<visp/vpImageTools.h>
+	<visp/vpCameraParameters.h>
+	<visp/vpTime.h>
+	<visp/vpVelocityTwistMatrix.h>
+	<visp/vpMath.h>
+	<visp/vpHomogeneousMatrix.h>
+	<visp/vpDisplayGTK.h>
+	<visp/vpDisplayGDI.h>
+	<visp/vpDisplayOpenCV.h>
+	<visp/vpDisplayD3D.h>
+	<visp/vpDisplayX.h>
+	<visp/vpParseArgv.h>
+	<visp/vpIoTools.h>
+	<visp/vpPlot.h>
+	<visp/vpNoise.h>
+	<visp/vpImageConvert.h>
+	<visp/vpExponentialMap.h>
+
+1406259082 h:\vs le_cui\vs_positioning_z-master\functions.h
+	<opencv/cv.h>
+	<opencv/highgui.h>
+	<time.h>
+
+1406259082 h:\vs le_cui\vs_positioning_z-master\tritor.h
+	<math.h>
+
+1406259082 source:h:\vs le_cui\vs_positioning_z-master\mylog.cpp
+	"myLog.h"
+	"unistd.h"
+	"fcntl.h"
+
+1406259082 source:h:\vs le_cui\vs_positioning_z-master\npfeatureluminance.cpp
+	<visp/vpMatrix.h>
+	<visp/vpHomogeneousMatrix.h>
+	<visp/vpDisplay.h>
+	<visp/vpPixelMeterConversion.h>
+	<visp/vpImageConvert.h>
+	<visp/vpImageFilter.h>
+	<visp/vpException.h>
+	<visp/vpDisplayGTK.h>
+	<visp/vpDisplayGDI.h>
+	<visp/vpDisplayOpenCV.h>
+	<visp/vpDisplayD3D.h>
+	<visp/vpDisplayX.h>
+	"npFeatureLuminance.h"
+
+1406259082 h:\vs le_cui\vs_positioning_z-master\npfeatureluminance.h
+	<visp/vpMatrix.h>
+	<visp/vpBasicFeature.h>
+	<visp/vpImage.h>
+
+1406259082 source:h:\vs le_cui\vs_positioning_z-master\tritor.cpp
 	"tritor.h"
 
