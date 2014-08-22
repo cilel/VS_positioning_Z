@@ -49,7 +49,11 @@ HRESULT CSyncSerialComm::Open()
     }
 
     else
+    {
+        winLog<<"Serial port opened..."<<endl;
         hResult = S_OK;
+    }
+
 
     return hResult;
 }
@@ -68,7 +72,7 @@ HRESULT CSyncSerialComm::Close()
         CloseHandle(m_hSerialComm);
         m_hSerialComm = INVALID_HANDLE_VALUE;
     }
-
+    winLog<<"Serial port closed..."<<endl;
     return S_OK;
 }
 
@@ -97,6 +101,7 @@ HRESULT CSyncSerialComm::ConfigPort(DWORD dwBaudRate, DWORD dwTimeOutInSec)
         dcbConfig.StopBits = ONESTOPBIT;
         dcbConfig.fBinary = TRUE;
         dcbConfig.fParity = TRUE;
+        winLog<<"Serial port Configure successfully..."<<endl;
     }
 
     else

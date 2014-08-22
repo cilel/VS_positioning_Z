@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="CLIENTFUNCS.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="869" topLine="27" />
+	<File name="CLIENTFUNCS.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="936" topLine="0" />
 	</File>
-	<File name="CLIENTFUNCS.h" open="1" top="1" tabpos="5">
-		<Cursor position="613" topLine="0" />
+	<File name="CLIENTFUNCS.h" open="0" top="0" tabpos="5">
+		<Cursor position="613" topLine="6" />
 	</File>
-	<File name="Client.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="21368" topLine="544" />
+	<File name="Client.cpp" open="1" top="1" tabpos="0">
+		<Cursor position="8525" topLine="235" />
 	</File>
-	<File name="Client.h" open="0" top="0" tabpos="3">
-		<Cursor position="1588" topLine="23" />
+	<File name="Client.h" open="0" top="0" tabpos="6">
+		<Cursor position="977" topLine="0" />
 	</File>
 	<File name="SyncSerialComm.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="1332" topLine="27" />
+		<Cursor position="3184" topLine="207" />
+	</File>
+	<File name="SyncSerialComm.h" open="0" top="0" tabpos="0">
+		<Cursor position="246" topLine="0" />
 	</File>
 	<File name="configinfo.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="724" topLine="0" />
 	</File>
-	<File name="controlserver.h" open="0" top="0" tabpos="0">
-		<Cursor position="460" topLine="0" />
-	</File>
-	<File name="functions.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="0" topLine="0" />
-	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="788" topLine="0" />
+	<File name="main.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="788" topLine="2" />
 	</File>
 	<File name="npFeatureLuminance.h" open="0" top="0" tabpos="0">
 		<Cursor position="3770" topLine="114" />

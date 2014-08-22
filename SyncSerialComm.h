@@ -2,6 +2,7 @@
 * SyncSerialComm.h: interface for the CSyncSerialComm class.
 * ==================================================================*/
 #include "windows.h"
+#include "myLog.h"
 
 #if !defined(AFX_SYNCSERIALCOMM_H__D1CAB621_DF4B_4729_82AB_31D5B9EFE8A9__INCLUDED_)
 #define AFX_SYNCSERIALCOMM_H__D1CAB621_DF4B_4729_82AB_31D5B9EFE8A9__INCLUDED_

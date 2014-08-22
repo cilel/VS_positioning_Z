@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="CLIENTFUNCS.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="869" topLine="27" />
+	</File>
+	<File name="CLIENTFUNCS.h" open="1" top="1" tabpos="5">
+		<Cursor position="613" topLine="0" />
+	</File>
+	<File name="Client.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="21368" topLine="544" />
+	</File>
+	<File name="Client.h" open="0" top="0" tabpos="3">
+		<Cursor position="1588" topLine="23" />
+	</File>
+	<File name="SyncSerialComm.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="1332" topLine="27" />
+	</File>
+	<File name="configinfo.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="controlserver.h" open="0" top="0" tabpos="0">
+		<Cursor position="460" topLine="0" />
+	</File>
+	<File name="functions.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="788" topLine="0" />
+	</File>
+	<File name="npFeatureLuminance.h" open="0" top="0" tabpos="0">
+		<Cursor position="3770" topLine="114" />
+	</File>
+</CodeBlocks_layout_file>
