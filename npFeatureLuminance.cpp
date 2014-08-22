@@ -269,10 +269,10 @@ npFeatureLuminance::buildFrom(vpImage<unsigned char> &I)
   Ixs = 0;
   Iys = 0;
  vpMatrix Iuv; // derivative of gaussian kernel
- vpMatrix I2uv; // second derivaive of gaussian kernel
+ //vpMatrix I2uv; // second derivaive of gaussian kernel
  int filter_size = 25;
  Iuv.resize(filter_size,filter_size);
- I2uv.resize(filter_size,filter_size);
+ //I2uv.resize(filter_size,filter_size);
 
  double sigma_2_inv = 0.5/(sigma*sigma);
  double sigma_3_inv = 1/(sigma*sigma*sigma);
@@ -293,7 +293,7 @@ npFeatureLuminance::buildFrom(vpImage<unsigned char> &I)
         double exp_uv = exp(-(u2+v2)*sigma_2_inv);
         //cout << "exp_uv=" << exp_uv << endl;
         Iuv[u][v] = -a*Z_2_inv*((u2+v2)*sigma_2_inv-1)*pi_inv*sigma_3_inv*exp_uv;
-        I2uv[u][v] = -a*Z_2_inv*((u2+v2-6*sigma_2)*(u2+v2-sigma_2)*pi_inv*sigma_8_inv*exp_uv*(-a)*Z_2_inv+((u2+v2)*sigma_2_inv-1)*pi_inv*sigma_3_inv*exp_uv)*(-(2-a*2*sigma_2_inv)*Z_2_inv);//
+   //     I2uv[u][v] = -a*Z_2_inv*((u2+v2-6*sigma_2)*(u2+v2-sigma_2)*pi_inv*sigma_8_inv*exp_uv*(-a)*Z_2_inv+((u2+v2)*sigma_2_inv-1)*pi_inv*sigma_3_inv*exp_uv)*(-(2-a*2*sigma_2_inv)*Z_2_inv);//
 
         //Iuv[u][v] = a*(u*u+v*v)*exp(-(u*u+v*v)*sigma_inverse_sq)*sigma_3;
         //cout << Iuv[u][v] << "\t" << u << "\t" << v << "\t" << sigma << endl;
@@ -303,7 +303,7 @@ npFeatureLuminance::buildFrom(vpImage<unsigned char> &I)
   matrixConvert(imIx,cvimIx);
   matrixConvert(imIy,cvimIy);
   matrixConvert(Iuv,cvIuv);
-  matrixConvert(I2uv,cvI2uv);
+ // matrixConvert(I2uv,cvI2uv);
 
 
   double tm0 = vpTime::measureTimeSecond();
@@ -377,16 +377,16 @@ npFeatureLuminance::buildFrom(vpImage<unsigned char> &I)
 
   cv::filter2D(cvimIx,cvIxs,-1,cvIuv);
   cv::filter2D(cvimIy,cvIys,-1,cvIuv);
-  cv::filter2D(cvimIx,cvIxss,-1,cvI2uv);
-  cv::filter2D(cvimIy,cvIyss,-1,cvI2uv);
+//  cv::filter2D(cvimIx,cvIxss,-1,cvI2uv);
+//  cv::filter2D(cvimIy,cvIyss,-1,cvI2uv);
 
 
   vpMatrix mIxs,mIys,mIxss,mIyss;
 
   matrixConvert(cvIxs,mIxs);
   matrixConvert(cvIys,mIys);
-  matrixConvert(cvIxss,mIxss);
-  matrixConvert(cvIyss,mIyss);
+  //matrixConvert(cvIxss,mIxss);
+ // matrixConvert(cvIyss,mIyss);
 
   l= 0 ;
   for (int i=bord; i < nbr-bord ; i++)
@@ -395,8 +395,8 @@ npFeatureLuminance::buildFrom(vpImage<unsigned char> &I)
     {
         pixInfo[l].Ixs = mIxs[i][j];
         pixInfo[l].Iys = mIys[i][j];
-        pixInfo[l].Ixss = mIxss[i][j];
-        pixInfo[l].Iyss = mIyss[i][j];
+    //    pixInfo[l].Ixss = mIxss[i][j];
+    //    pixInfo[l].Iyss = mIyss[i][j];
 
         l++;
     }
@@ -575,7 +575,7 @@ npFeatureLuminance::interaction(vpMatrix &L)
           double A = ( Ixx*Ix_g+Iyx*Iy_g );
           double B = ( Ixy*Ix_g+Iyy*Iy_g );
           double D = (Ix*Ixs +Iy*Iys); // maximize image gradient as cost function => mimimize derivative of image gradient
-          double E = (Ixs*Ixs+Ix*Ixss +Iys*Iys+Iy*Iyss); // derivative of D;
+      //    double E = (Ixs*Ixs+Ix*Ixss +Iys*Iys+Iy*Iyss); // derivative of D;
 
 /*
           if(m%20000==0)
@@ -605,14 +605,14 @@ npFeatureLuminance::interaction(vpMatrix &L)
               Lg[m][3] = 0;
               Lg[m][4] = 0;
               Lg[m][5] = 0;
-
+/*
               Ldg[m][0] = 0;
               Ldg[m][1] = 0;
               Ldg[m][2] = 2*E;
               Ldg[m][3] = 0;
               Ldg[m][4] = 0;
               Ldg[m][5] = 0;
-
+*/
               //Lz[m] = Lg[m][2];
               //CostFunctionSg += (A+B);
               //cout << "CostFunctionLz="<<CostFunctionSg << endl;
