@@ -254,16 +254,23 @@ Client::Client(char *ip)
         ===========================================*/
 
         //!------- HERE IS THE FUNCTION OF "LE CUI"
+        // Here u can simply use :
+        // nV = semPosCont(curIm,refIm,iter);
+
         if(iter==0)      // Modification by naresh
         {
-            nV = semPosCont(curIm,refIm,true);
+            nV = semPosCont(curIm,refIm,0);
             cout<<"First image.... DEBUG 2"<<endl;
         }
-
+        else if (iter==1)
+        {
+            nV = semPosCont(curIm,refIm,1);
+            cout<<"from second image.... DEBUG 3"<<endl;
+        }
         else
         {
-            nV = semPosCont(curIm,refIm,false);
-            cout<<"from second image.... DEBUG 3"<<endl;
+            nV = semPosCont(curIm,refIm,iter);
+            cout<<"from third image.... DEBUG 4"<<endl;
         }
 
         cout<<"THE NEW VALUES ARE: "<<nV[1]<<"         "<<nV[0]<<endl;
