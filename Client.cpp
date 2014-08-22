@@ -575,7 +575,7 @@ vpColVector semPosCont(Mat curImage, Mat desImage, int initflag)
 
             //cout << "Sg_sum and Sgd_sum:" <<  Sg_sum << " " << Sgd_sum << endl;
 
-            vgd = sign*fabs(1e13*(Sg_sum-Sgd_sum)/Jg[0]);
+            vgd = sign*fabs(5e-3*(Sg_sum-Sgd_sum)/Jg[0]);
 
         }
 

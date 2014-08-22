@@ -230,7 +230,7 @@ npFeatureLuminance::buildFrom(vpImage<unsigned char> &I)
 
   double px = cam.get_px() ;
   double py = cam.get_py() ;
-  double a = -15;//6e5;
+  double m = -15;//a coefficient which depends on the sensor(diamter of aperture, distance between image plane and lens, focus distance...);
 
   if (firstTimeIn==0)
     { 
@@ -276,8 +276,8 @@ npFeatureLuminance::buildFrom(vpImage<unsigned char> &I)
 
  double sigma_2_inv = 0.5/(sigma*sigma);
  double sigma_3_inv = 1/(sigma*sigma*sigma);
- double sigma_8_inv = sigma_2_inv*sigma_3_inv*sigma_3_inv;
- double sigma_2 = sigma*sigma;
+// double sigma_8_inv = sigma_2_inv*sigma_3_inv*sigma_3_inv;
+// double sigma_2 = sigma*sigma;
  const double pi_inv = 1/3.1415926;
  double Z_2_inv = 1/(Z_fl*Z_fl);
 
@@ -292,14 +292,14 @@ npFeatureLuminance::buildFrom(vpImage<unsigned char> &I)
         int v2=v*v;
         double exp_uv = exp(-(u2+v2)*sigma_2_inv);
         //cout << "exp_uv=" << exp_uv << endl;
-        Iuv[u][v] = -a*Z_2_inv*((u2+v2)*sigma_2_inv-1)*pi_inv*sigma_3_inv*exp_uv;
+        Iuv[u][v] = m*((u2+v2)*sigma_2_inv-1)*pi_inv*sigma_3_inv*exp_uv;
    //     I2uv[u][v] = -a*Z_2_inv*((u2+v2-6*sigma_2)*(u2+v2-sigma_2)*pi_inv*sigma_8_inv*exp_uv*(-a)*Z_2_inv+((u2+v2)*sigma_2_inv-1)*pi_inv*sigma_3_inv*exp_uv)*(-(2-a*2*sigma_2_inv)*Z_2_inv);//
 
         //Iuv[u][v] = a*(u*u+v*v)*exp(-(u*u+v*v)*sigma_inverse_sq)*sigma_3;
         //cout << Iuv[u][v] << "\t" << u << "\t" << v << "\t" << sigma << endl;
     }
 
-  cv::Mat cvimIx, cvimIy, cvIuv, cvI2uv, cvIxs, cvIys, cvIxss, cvIyss;
+  cv::Mat cvimIx, cvimIy, cvIuv,  cvIxs, cvIys;//cvI2uv, cvIxss, cvIyss;
   matrixConvert(imIx,cvimIx);
   matrixConvert(imIy,cvimIy);
   matrixConvert(Iuv,cvIuv);
@@ -381,7 +381,7 @@ npFeatureLuminance::buildFrom(vpImage<unsigned char> &I)
 //  cv::filter2D(cvimIy,cvIyss,-1,cvI2uv);
 
 
-  vpMatrix mIxs,mIys,mIxss,mIyss;
+  vpMatrix mIxs,mIys;//mIxss,mIyss;
 
   matrixConvert(cvIxs,mIxs);
   matrixConvert(cvIys,mIys);
