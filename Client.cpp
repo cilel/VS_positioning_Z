@@ -398,7 +398,7 @@ vpColVector semPosCont(Mat curImage, Mat desImage, int initflag)
     vpImageConvert::convert(curImage, I);
     vpImageConvert::convert(desImage, Id);
 
-    pjModel = parallel; // for real control code only, commit this line for simulator
+    pjModel = parallelZ; // for real control code only, commit this line for simulator
 
     if(initflag==0)
     {
@@ -424,8 +424,6 @@ vpColVector semPosCont(Mat curImage, Mat desImage, int initflag)
 
         sId.interaction(Lsd) ;
 
-        // For Z
-       // Lgsd = sId.get_Lg();
 
         if(pjModel==parallel )
         {
@@ -559,7 +557,6 @@ vpColVector semPosCont(Mat curImage, Mat desImage, int initflag)
             Jgn[2][0]=1;
 
             Jgs=-Lgs*Jgn; //  derivative of visual feature (jacobian)
-            //Jdgs=-Ldgs*cVw*Jgn; // second derivative of visual feature (hessien)
 
             cout << "Jgs[0][0]="<< Jgs[0][0] << endl;
 
@@ -568,17 +565,15 @@ vpColVector semPosCont(Mat curImage, Mat desImage, int initflag)
             //Jdg.resize(1);
 
             for (int m=0; m<Jgs.getRows();m++)
-            {
               Jg[0]+=fabs(Jgs[m][0]);//fabs
-             // Jdg[0]+=(Jdgs[m][0]);
-            }
+
 
             cout << "Jg=" << Jg << endl;
            // cout << "Jdg=" << Jdg << endl;
 
             //-----------------------------------
 
-            cout << "Sg_sum and Sgd_sum:" <<  Sg_sum << " " << Sgd_sum << endl;
+            //cout << "Sg_sum and Sgd_sum:" <<  Sg_sum << " " << Sgd_sum << endl;
 
             vgd = sign*fabs(1e13*(Sg_sum-Sgd_sum)/Jg[0]);
 
