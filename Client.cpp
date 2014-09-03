@@ -431,6 +431,8 @@ vpColVector semPosCont(Mat curImage, Mat desImage, int initflag)
 
         sId.interaction(Lsd) ;
 
+        // For Z
+       // Lgsd = sId.get_Lg();
 
         if(pjModel==parallel )
         {
@@ -457,7 +459,8 @@ vpColVector semPosCont(Mat curImage, Mat desImage, int initflag)
         }
         else if (pjModel==parallelZ)
         {
-            sI.interaction(Lsd) ; // here use Ls instead of Lsd to compute Js
+            vpMatrix Lsd_temp;
+            sI.interaction(Lsd_temp) ; // here use Ls instead of Lsd to compute Js
             Sgd_sum = sId.get_sg_sum();
             Sgi_sum = sI.get_sg_sum();
 
@@ -477,7 +480,7 @@ vpColVector semPosCont(Mat curImage, Mat desImage, int initflag)
             Lgsd = sId.get_Lg();
 
             // Compute the Hessian H = L^TL
-            Hsd = Lsd.AtA() ;
+            //Hsd = Lsd.AtA() ;
             Hgsd = Lgsd.AtA();
             //cout << "Hgsd=\n" << Hgsd <<endl;
 
@@ -489,7 +492,7 @@ vpColVector semPosCont(Mat curImage, Mat desImage, int initflag)
             for(unsigned int i = 0 ; i < n ; i++) diagHsd[i][i] = Hsd[i][i];
 
             diagHgsd.resize(1,1);
-            diagHsd[0][0] = Hsd[0][0];
+            diagHgsd[0][0] = Hgsd[0][0];
 
         }
         v.resize(6);
@@ -539,6 +542,12 @@ vpColVector semPosCont(Mat curImage, Mat desImage, int initflag)
         }
         else if(pjModel==parallelZ)
         {
+
+            H = ((mu * diagHsd) + Hsd).inverseByLU();
+            e = H * Js.t() *err ;
+            // velocity
+            v = -lambda*e;
+
             double Sg_sum = sI.get_sg_sum();
 
             Jn.resize(6,5);
@@ -574,9 +583,7 @@ vpColVector semPosCont(Mat curImage, Mat desImage, int initflag)
             for (int m=0; m<Jgs.getRows();m++)
               Jg[0]+=fabs(Jgs[m][0]);//fabs
 
-
-            cout << "Jg=" << Jg << endl;
-           // cout << "Jdg=" << Jdg << endl;
+            //cout << "Jg=" << Jg << endl;
 
             //-----------------------------------
 
@@ -607,10 +614,9 @@ vpColVector semPosCont(Mat curImage, Mat desImage, int initflag)
             v[4]=0;//vc[3];
             v[3]=0;//vc[2];
             v[2]=vgd;
-            v[1]=0;
-            v[0]=0;
+            v[1]=-vc[1];
+            v[0]=vc[0];
         }
-
 
     }
     return v;
