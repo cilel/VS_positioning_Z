@@ -73,7 +73,8 @@ vpColVector vel;
     double Sgd_sum; // desired cost function (sum of square of image gradient)
     double Sgi_sum; // init cost function (for computing driving direction)
 
-    double lambda=1e5;
+    double lambda=1e5; // gain for controlling x,y
+    double alpha= 5e-3; // gain for controlling z
     double mu=0.0001;
 
 
@@ -485,7 +486,7 @@ vpColVector semPosCont(Mat curImage, Mat desImage, int initflag)
             //cout << "Hgsd=\n" << Hgsd <<endl;
 
             // Compute the Hessian diagonal for the Levenberg-Marquartd
-            // optimization process
+            // optimization processBut
             unsigned int n = 5 ;
             diagHsd.resize(n,n) ;
             diagHsd.eye(n);
@@ -589,7 +590,7 @@ vpColVector semPosCont(Mat curImage, Mat desImage, int initflag)
 
             //cout << "Sg_sum and Sgd_sum:" <<  Sg_sum << " " << Sgd_sum << endl;
 
-            vgd = sign*fabs(5e-3*(Sg_sum-Sgd_sum)/Jg[0]);
+            vgd = sign*fabs(alpha*(Sg_sum-Sgd_sum)/Jg[0]);
 
         }
 
